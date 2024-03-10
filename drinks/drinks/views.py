@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 @api_view(['GET','POST','PUT'])
-def person_list(request):
+def person_list(request,format = None):
     if request.method == 'GET':
         person = Person.objects.all()
         serializer = PersonSerializer(person, many = True)
